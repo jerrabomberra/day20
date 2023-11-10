@@ -6,39 +6,41 @@
 # if snake touches itself then game over (end)
 
 from turtle import Turtle, Screen 
-
+import time
 screen = Screen()
 screen.setup(width=600, height=600)
 screen.bgcolor('black')
 screen.title('Snake Game')
-screen.tracer()
-screen.update()
+screen.tracer(0)
+
 
 
 starting_position = [(0,0),(-20,0),(-40,0)]
 
 segments = []
 
-def snake_start():
-    for i in starting_position:
-        new_segment = Turtle('square')
-        new_segment.speed('fastest')
-        new_segment.color('white')
-        new_segment.penup()
-    
-        new_segment.goto(i)
-        segments.append(new_segment)
+for i in starting_position:
+    new_segment = Turtle('square')
+    new_segment.speed(0)
+    new_segment.color('white')
+    new_segment.penup()    
+    new_segment.goto(i)
+    segments.append(new_segment)
         
-snake_start()
 
-print(segments)
+
+# print(segments)
 
 game_is_on = True
 
 while game_is_on:
+    screen.update()
+    time.sleep(1)
     for seg in segments:
-        seg.forward(100)
-    break
+        seg.forward(10)
+        
+    # break
+    
 
 
 screen.exitonclick()
