@@ -11,9 +11,34 @@ screen = Screen()
 screen.setup(width=600, height=600)
 screen.bgcolor('black')
 screen.title('Snake Game')
+screen.tracer()
+screen.update()
 
-snake = Turtle()
-snake.shape("square")
-for i in range(3):
-    tim.position(0.00,0.00)
+
+starting_position = [(0,0),(-20,0),(-40,0)]
+
+segments = []
+
+def snake_start():
+    for i in starting_position:
+        new_segment = Turtle('square')
+        new_segment.speed('fastest')
+        new_segment.color('white')
+        new_segment.penup()
+    
+        new_segment.goto(i)
+        segments.append(new_segment)
+        
+snake_start()
+
+print(segments)
+
+game_is_on = True
+
+while game_is_on:
+    for seg in segments:
+        seg.forward(100)
+    break
+
+
 screen.exitonclick()
