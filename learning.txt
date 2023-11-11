@@ -1,0 +1,13 @@
+segments is a list of memory locations that reference the part of the snake
+segments[0] is the snakes head
+
+in the class, 
+
+                    class Snake:
+
+                        def __init__(self):
+                            self.segments = []
+                            self.create_snake()
+                            self.head = self.segments[0]
+
+segments, head and create snake must be prefixed with "self."
