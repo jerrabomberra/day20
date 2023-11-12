@@ -11,3 +11,4 @@ in the class,
                             self.head = self.segments[0]
 
 segments, head and create snake must be prefixed with "self."
+
