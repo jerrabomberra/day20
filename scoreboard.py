@@ -1,23 +1,19 @@
-from turtle import Screen, Turtle
+from turtle import Turtle
 
-
-screen = Screen()
 
 class Scoreboard(Turtle):
+
     def __init__(self):
         super().__init__()
-        self.game_score = 0
-        self.score = Turtle()
+        self.score = 0
+        self.color("white")
         self.penup()
-        self.game_score += 1
+        self.goto(0, 270)
+        self.write(f"Score :{self.score}", True, align="center", font=("Arial", 24, "normal"))
+        self.hideturtle()
 
-    def keep_score(self):
-        
-        while self.game_score < 10:
-            self.score.write(f"Score :{self.game_score}", True, align="center")
-            break
-
-x = Scoreboard()
-x.keep_score()
-screen.exitonclick()
-
+    def increase_score(self):
+        self.score += 1
+        self.clear()
+        self.goto(0, 270)
+        self.write(f"Score : {self.score}", True, align="center", font=("Arial", 24, "normal"))
