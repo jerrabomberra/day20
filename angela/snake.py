@@ -5,6 +5,7 @@ UP = 90
 DOWN = 270
 LEFT = 180
 RIGHT = 0
+SPEED =1
 
 
 class Snake:
@@ -12,6 +13,7 @@ class Snake:
     def __init__(self):
         self.segments = []
         self.create_snake()
+        self.speed(SPEED)
         self.head = self.segments[0]
 
     def create_snake(self):
